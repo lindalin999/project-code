@@ -1,46 +1,43 @@
 #include<iostream> 
 using namespace std;
 int main(){
-        int month,dmonth;  			//¹ï¼ú¤ë¥÷¡A§I¼ú´Á­­¤ë 
-        int year,dyear;				//¹ï¼ú¦~¥÷¡A§I¼ú´Á­­¦~ 
-        int i,j,k=0;			//k¹ïÀ³¤¤¼ú¼h¯Å 
-        char n[3][8];			//¤¤¼ú¸¹½X 
-        char t3[3],t5[5];		//±ı¹ï¼ú¸¹½X 
+        int month,dmonth;  		//å°çæœˆä»½ï¼Œå…ŒçæœŸé™æœˆ 
+        int year,dyear;			//å°çå¹´ä»½ï¼Œå…ŒçæœŸé™å¹´ 
+        int i,j,k=0;			//kå°æ‡‰ä¸­çå±¤ç´š 
+        char n[3][8];			//ä¸­çè™Ÿç¢¼ 
+        char t3[3],t5[5];		//æ¬²å°çè™Ÿç¢¼ 
 
-        cout<<"½Ğ¿é¤J¹ï¼úÀY¤ë¥÷(eg¡G2022/9-10½Ğ¿é¤J'2022 9')"<<endl; 
+        cout<<"è«‹è¼¸å…¥å°çé ­æœˆä»½(egï¼š2022/9-10è«‹è¼¸å…¥'2022 9')"<<endl; 
             cin>>year>>month;
-            dmonth=month+6;				//´Á­­¬°¹ï¼úÀY¤ë¥÷©¹«á±À6­Ó¤ëªº5¸¹ 
+            dmonth=month+6;			//æœŸé™ç‚ºå°çé ­æœˆä»½å¾€å¾Œæ¨6å€‹æœˆçš„5è™Ÿ 
             dyear=year+(dmonth/12);			
             dmonth=dmonth%12;
    
-        cout<<"½Ğ¿é¤J¤¤¼ú¸¹½X(¤@¦¸³Ì¦h¿é¤J3²Õ)¡G"<<endl;
-        cin>>n[0]>>n[1]>>n[2];				//¨Ï¥Î¤Gºû°}¦C¡A¸`¬Ù¨BÆJ 
+        cout<<"è«‹è¼¸å…¥ä¸­çè™Ÿç¢¼(ä¸€æ¬¡æœ€å¤šè¼¸å…¥3çµ„)ï¼š"<<endl;
+        cin>>n[0]>>n[1]>>n[2];				//ä½¿ç”¨äºŒç¶­é™£åˆ—ï¼Œç¯€çœæ­¥é©Ÿ 
 
-		cout<<"½Ğ¿é¤Jµo²¼«á3½X¡G"<<endl;	 
-        while(cin>>t3){						//while°j°é¡G¨Ï¥ÎªÌ¥i­«½Æ¿é¤J§I¼ú 
+	cout<<"è«‹è¼¸å…¥ç™¼ç¥¨å¾Œ3ç¢¼ï¼š"<<endl;	 
+        while(cin>>t3){							//whileè¿´åœˆï¼šä½¿ç”¨è€…å¯é‡è¤‡è¼¸å…¥ 
             for(i=0;i<=2;i++){
                     if(t3[0]==n[i][5] and t3[1]==n[i][6] and t3[2]==n[i][7]){
-                            k=1;							//«á¤T½X¬Ò²Å¦Xªº¸Ü¨Ïk=1 
-                    cout<<"½Ğ¿é¤Jµo²¼«e5½X¡G"<<endl;
+                            k=1;					//å¾Œä¸‰ç¢¼çš†ç¬¦åˆçš„è©±ä½¿k=1 
+                    cout<<"è«‹è¼¸å…¥ç™¼ç¥¨å‰5ç¢¼ï¼š"<<endl;
                     cin>>t5;
-                    for(j=4;j>=0;j--){						//±q²Ä¤­¦ì¼Æ¶}©l¤ñ¹ï 
-                            if(t5[j]==n[i][j]) k=k+1;		//¨C²Å¦X¤@¦ì¼Æ¡Ak´N+1ÂI		
-                            else break;						//­Y¤ñ¹ï¤£²Å¡A°j°é§Y°±¤î 
-                    }
+                    for(j=4;j>=0;j--){					//å¾ç¬¬äº”ä½æ•¸é–‹å§‹æ¯”å° 
+                            if(t5[j]==n[i][j]) k=k+1;			//æ¯ç¬¦åˆä¸€ä½æ•¸ï¼Œkå°±+1é»		
+                            else break;					//è‹¥æ¯”å°ä¸ç¬¦ï¼Œè¿´åœˆå³åœæ­¢ 
+                    	}
                     
-                    if(k==6) cout<<"ÀY¼ú20¸U¤¸¡I¡I"<<endl<<"§I¼ú´Á­­¡G"<<year<<"/"<<month<<"/5"<<endl;
-                    else if(k==5) cout<<"¤G¼ú4¸U¤¸¡I¡I"<<endl<<"§I¼ú´Á­­¡G"<<year<<"/"<<month<<"/5"<<endl; 
-                    else if(k==4) cout<<"¤T¼ú1¸U¤¸¡I¡I"<<endl<<"§I¼ú´Á­­¡G"<<year<<"/"<<month<<"/5"<<endl; 
-                    else if(k==3) cout<<"¥|¼ú4000¤¸¡I¡I"<<endl<<"§I¼ú´Á­­¡G"<<year<<"/"<<month<<"/5"<<endl; 
-                    else if(k==2) cout<<"¤­¼ú1000¤¸¡I¡I"<<endl<<"§I¼ú´Á­­¡G"<<year<<"/"<<month<<"/5"<<endl;
-                    else if(k==1) cout<<"¤»¼ú200¤¸¡I¡I"<<endl<<"§I¼ú´Á­­¡G"<<year<<"/"<<month<<"/5"<<endl;
+                    if(k==6) cout<<"é ­ç20è¬å…ƒï¼ï¼"<<endl<<"å…ŒçæœŸé™ï¼š"<<year<<"/"<<month<<"/5"<<endl;
+                    else if(k==5) cout<<"äºŒç4è¬å…ƒï¼ï¼"<<endl<<"å…ŒçæœŸé™ï¼š"<<year<<"/"<<month<<"/5"<<endl; 
+                    else if(k==4) cout<<"ä¸‰ç1è¬å…ƒï¼ï¼"<<endl<<"å…ŒçæœŸé™ï¼š"<<year<<"/"<<month<<"/5"<<endl; 
+                    else if(k==3) cout<<"å››ç4000å…ƒï¼ï¼"<<endl<<"å…ŒçæœŸé™ï¼š"<<year<<"/"<<month<<"/5"<<endl; 
+                    else if(k==2) cout<<"äº”ç1000å…ƒï¼ï¼"<<endl<<"å…ŒçæœŸé™ï¼š"<<year<<"/"<<month<<"/5"<<endl;
+                    else if(k==1) cout<<"å…­ç200å…ƒï¼ï¼"<<endl<<"å…ŒçæœŸé™ï¼š"<<year<<"/"<<month<<"/5"<<endl;
                         }
                     }
-                if(k==0) cout<<"¨S¤¤¡A¤U¦¸ÁÙ¦³¾÷·|¡I"<<endl;
+                if(k==0) cout<<"æ²’ä¸­ï¼Œä¸‹æ¬¡é‚„æœ‰æ©Ÿæœƒï¼"<<endl;
                 cout<<endl;
             }
         return 0;
 }
-
-
-
